@@ -1,23 +1,46 @@
-</html>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>加载中...</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- Tailwind CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <!-- Typography 插件（用于 Markdown 美化） -->
-  <link href="https://cdn.jsdelivr.net/npm/@tailwindcss/typography@0.5.9/dist/typography.min.css" rel="stylesheet">
-  <!-- marked.js 渲染 Markdown -->
+  <!-- GitHub 风格 Markdown 样式 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css/github-markdown.min.css">
+  <!-- Markdown 解析器 -->
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <style>
+    body {
+      background-color: #f9fafb;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+    .container {
+      max-width: 768px;
+      margin: 40px auto;
+      padding: 0 24px;
+    }
+    a.back-link {
+      display: inline-block;
+      margin-bottom: 1rem;
+      color: #4f46e5;
+      text-decoration: none;
+    }
+    a.back-link:hover {
+      text-decoration: underline;
+    }
+    h1#page-title {
+      font-size: 1.875rem;
+      font-weight: bold;
+      color: #4f46e5;
+      margin-bottom: 1.5rem;
+    }
+  </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body>
 
-  <div class="max-w-3xl mx-auto py-12 px-6">
-    <a href="../index.html" class="text-indigo-600 hover:text-indigo-800 text-sm mb-6 inline-block">&larr; 返回首页</a>
-    <h1 id="page-title" class="text-2xl font-bold text-indigo-700 mb-6">文章加载中...</h1>
-    <div id="content" class="prose prose-indigo max-w-none">加载中...</div>
+  <div class="container">
+    <a href="../index.html" class="back-link">&larr; 返回首页</a>
+    <h1 id="page-title">文章加载中...</h1>
+    <div id="content" class="markdown-body">加载中...</div>
   </div>
 
   <script>
@@ -34,10 +57,15 @@
           return res.text();
         })
         .then(text => {
+          // 提取 Markdown 一级标题作为文章标题
           const match = text.match(/^#\s+(.*)/m);
           const title = match ? match[1].trim() : "未命名文章";
+
+          // 设置浏览器 tab 和页面内标题
           document.title = title;
           document.getElementById("page-title").innerText = title;
+
+          // 渲染 Markdown 到 HTML
           document.getElementById("content").innerHTML = marked.parse(text);
         })
         .catch(err => {
@@ -46,6 +74,6 @@
         });
     }
   </script>
+
 </body>
 </html>
-
