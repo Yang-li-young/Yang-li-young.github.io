@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>训练</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-50">
+    <!-- 训练状态卡片 -->
+    <div class="bg-gradient-to-r from-green-500 to-green-600 text-white p-6">
+        <div class="flex items-center justify-between mb-4">
+            <div>
+                <h1 class="text-xl font-bold">训练中心</h1>
+                <p class="text-green-100 text-sm">保持专注，提升技术</p>
+            </div>
+            <div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
+                <i class="fas fa-dumbbell text-xl"></i>
+            </div>
+        </div>
+        
+        <!-- 本周训练统计 -->
+        <div class="grid grid-cols-3 gap-4">
+            <div class="text-center">
+                <div class="text-2xl font-bold">5</div>
+                <div class="text-xs text-green-100">本周训练次数</div>
+            </div>
+            <div class="text-center">
+                <div class="text-2xl font-bold">8.5</div>
+                <div class="text-xs text-green-100">总训练小时</div>
+            </div>
+            <div class="text-center">
+                <div class="text-2xl font-bold">92%</div>
+                <div class="text-xs text-green-100">完成率</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 网球机器人设备状态 -->
+    <div class="p-4">
+        <div class="bg-white rounded-xl p-4 shadow-sm border border-gray-100 mb-6">
+            <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center">
+                    <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mr-3">
+                        <i class="fas fa-robot text-blue-500 text-xl"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-lg font-semibold text-gray-800">网球机器人</h2>
+                        <p class="text-sm text-gray-500">对抗级智能训练伙伴</p>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                    <span class="text-sm text-green-600 font-medium">已连接</span>
+                </div>
+            </div>
+            
+            <!-- 设备状态信息 -->
+            <div class="grid grid-cols-2 gap-4 mb-4">
+                <div class="bg-gray-50 rounded-lg p-3">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-sm text-gray-600">电量</span>
+                        <span class="text-sm font-medium text-gray-800">85%</span>
+                    </div>
+                    <div class="bg-gray-200 rounded-full h-2">
+                        <div class="bg-green-500 h-2 rounded-full" style="width: 85%"></div>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 rounded-lg p-3">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-sm text-gray-600">剩余网球</span>
+                        <span class="text-sm font-medium text-gray-800">47个</span>
+                    </div>
+                    <div class="bg-gray-200 rounded-full h-2">
+                        <div class="bg-blue-500 h-2 rounded-full" style="width: 47%"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 设备控制按钮 -->
+            <div class="flex space-x-3">
+                <button class="flex-1 bg-green-500 text-white py-2 rounded-lg text-sm font-medium">
+                    <i class="fas fa-play mr-2"></i>开始训练
+                </button>
+                <button class="flex-1 bg-blue-500 text-white py-2 rounded-lg text-sm font-medium">
+                    <i class="fas fa-cog mr-2"></i>设备设置
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 视频录制与分析 -->
+    <div class="p-4">
+        <div class="bg-white rounded-xl p-4 shadow-sm border border-gray-100 mb-6">
+            <div class="flex items-center mb-4">
+                <div class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center mr-3">
+                    <i class="fas fa-video text-purple-500 text-xl"></i>
+                </div>
+                <div>
+                    <h2 class="text-lg font-semibold text-gray-800">动作分析</h2>
+                    <p class="text-sm text-gray-500">4K高清录制，AI智能分析</p>
+                </div>
+            </div>
+            
+            <!-- 录制状态 -->
+            <div class="bg-gray-50 rounded-lg p-4 mb-4">
+                <div class="flex items-center justify-between mb-3">
+                    <div class="flex items-center">
+                        <div class="w-3 h-3 bg-red-500 rounded-full animate-pulse mr-2"></div>
+                        <span class="text-sm font-medium text-gray-800">正在录制</span>
+                    </div>
+                    <span class="text-sm text-gray-500">00:03:24</span>
+                </div>
+                <div class="flex space-x-2">
+                    <button class="bg-red-500 text-white px-4 py-2 rounded-lg text-sm font-medium">
+                        <i class="fas fa-stop mr-2"></i>停止录制
+                    </button>
+                    <button class="bg-gray-500 text-white px-4 py-2 rounded-lg text-sm font-medium">
+                        <i class="fas fa-pause mr-2"></i>暂停
+                    </button>
+                </div>
+            </div>
+            
+            <!-- 最近分析结果 -->
+            <div class="space-y-3">
+                <h3 class="text-sm font-medium text-gray-800">最近分析结果</h3>
+                
+                <div class="bg-green-50 border border-green-200 rounded-lg p-3">
+                    <div class="flex items-start">
+                        <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-3 mt-1">
+                            <i class="fas fa-check text-green-500 text-sm"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="text-sm font-medium text-gray-800 mb-1">正手击球 - 优秀</h4>
+                            <p class="text-xs text-gray-600 mb-2">击球点准确，发力充分，动作流畅</p>
+                            <div class="flex items-center text-xs text-green-600">
+                                <i class="fas fa-chart-line mr-1"></i>
+                                <span>准确率: 92%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-3">
+                    <div class="flex items-start">
+                        <div class="w-8 h-8 bg-yellow-100 rounded-full flex items-center justify-center mr-3 mt-1">
+                            <i class="fas fa-exclamation text-yellow-500 text-sm"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="text-sm font-medium text-gray-800 mb-1">发球动作 - 需改进</h4>
+                            <p class="text-xs text-gray-600 mb-2">建议：重心转移不够充分，击球点偏低</p>
+                            <div class="flex items-center text-xs text-yellow-600">
+                                <i class="fas fa-lightbulb mr-1"></i>
+                                <span>改进建议已生成</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 快速开始训练 -->
+    <div class="p-4">
+        <div class="bg-white rounded-xl p-4 shadow-sm border border-gray-100 mb-6">
+            <div class="flex items-center justify-between mb-4">
+                <h2 class="text-lg font-semibold text-gray-800">开始训练</h2>
+                <i class="fas fa-play-circle text-3xl text-green-500"></i>
+            </div>
+            <p class="text-sm text-gray-600 mb-4">选择训练模式，开始今日训练计划</p>
+            <div class="grid grid-cols-2 gap-3">
+                <button class="bg-gradient-to-r from-green-500 to-green-600 text-white py-3 rounded-lg font-medium">
+                    <i class="fas fa-robot mr-2"></i>机器人训练
+                </button>
+                <button class="bg-gradient-to-r from-blue-500 to-blue-600 text-white py-3 rounded-lg font-medium">
+                    <i class="fas fa-user mr-2"></i>人工训练
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 训练分类 -->
+    <div class="px-4 mb-6">
+        <h2 class="text-lg font-semibold text-gray-800 mb-4">训练分类</h2>
+        <div class="grid grid-cols-2 gap-4">
+            <div class="bg-white rounded-xl p-4 shadow-sm border border-gray-100">
+                <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-3">
+                    <i class="fas fa-bullseye text-green-500 text-xl"></i>
+                </div>
+                <h3 class="font-medium text-gray-800 mb-1">技术训练</h3>
+                <p class="text-sm text-gray-500">发球、击球技巧</p>
+            </div>
+            <div class="bg-white rounded-xl p-4 shadow-sm border border-gray-100">
+                <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-3">
+                    <i class="fas fa-running text-red-500 text-xl"></i>
+                </div>
+                <h3 class="font-medium text-gray-800 mb-1">体能训练</h3>
+                <p class="text-sm text-gray-500">力量、耐力提升</p>
+            </div>
+            <div class="bg-white rounded-xl p-4 shadow-sm border border-gray-100">
+                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-3">
+                    <i class="fas fa-chess text-blue-500 text-xl"></i>
+                </div>
+                <h3 class="font-medium text-gray-800 mb-1">战术训练</h3>
+                <p class="text-sm text-gray-500">比赛策略分析</p>
+            </div>
+            <div class="bg-white rounded-xl p-4 shadow-sm border border-gray-100">
+                <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-3">
+                    <i class="fas fa-medal text-orange-500 text-xl"></i>
+                </div>
+                <h3 class="font-medium text-gray-800 mb-1">比赛模拟</h3>
+                <p class="text-sm text-gray-500">实战对抗训练</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 训练计划 -->
+    <div class="px-4 mb-6">
+        <div class="flex items-center justify-between mb-4">
+            <h2 class="text-lg font-semibold text-gray-800">本周训练计划</h2>
+            <span class="text-sm text-green-500">查看全部</span>
+        </div>
+        
+        <div class="space-y-3">
+            <div class="bg-white rounded-xl p-4 shadow-sm border border-gray-100">
+                <div class="flex items-center">
+                    <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center mr-3">
+                        <i class="fas fa-check text-green-500"></i>
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="font-medium text-gray-800">周一 - 发球训练</h3>
+                        <p class="text-sm text-gray-500">45分钟 · 已完成</p>
+                    </div>
+                    <div class="text-sm text-green-500 font-medium">100%</div>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-xl p-4 shadow-sm border border-gray-100">
+                <div class="flex items-center">
+                    <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center mr-3">
+                        <i class="fas fa-check text-green-500"></i>
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="font-medium text-gray-800">周二 - 正手击球</h3>
+                        <p class="text-sm text-gray-500">60分钟 · 已完成</p>
+                    </div>
+                    <div class="text-sm text-green-500 font-medium">100%</div>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-xl p-4 shadow-sm border border-gray-100">
+                <div class="flex items-center">
+                    <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mr-3">
+                        <i class="fas fa-play text-blue-500"></i>
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="font-medium text-gray-800">周三 - 反手训练</h3>
+                        <p class="text-sm text-gray-500">50分钟 · 进行中</p>
+                    </div>
+                    <div class="text-sm text-blue-500 font-medium">60%</div>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-xl p-4 shadow-sm border border-gray-100 opacity-60">
+                <div class="flex items-center">
+                    <div class="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center mr-3">
+                        <i class="fas fa-clock text-gray-400"></i>
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="font-medium text-gray-800">周四 - 体能训练</h3>
+                        <p class="text-sm text-gray-500">90分钟 · 待开始</p>
+                    </div>
+                    <div class="text-sm text-gray-400 font-medium">0%</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 训练数据 -->
+    <div class="px-4 pb-6">
+        <h2 class="text-lg font-semibold text-gray-800 mb-4">训练数据</h2>
+        <div class="grid grid-cols-2 gap-4">
+            <div class="bg-white rounded-xl p-4 shadow-sm border border-gray-100">
+                <div class="flex items-center justify-between mb-2">
+                    <span class="text-sm text-gray-600">发球成功率</span>
+                    <span class="text-lg font-bold text-green-500">78%</span>
+                </div>
+                <div class="bg-gray-200 rounded-full h-2">
+                    <div class="bg-green-500 h-2 rounded-full" style="width: 78%"></div>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-xl p-4 shadow-sm border border-gray-100">
+                <div class="flex items-center justify-between mb-2">
+                    <span class="text-sm text-gray-600">击球准确率</span>
+                    <span class="text-lg font-bold text-green-500">85%</span>
+                </div>
+                <div class="bg-gray-200 rounded-full h-2">
+                    <div class="bg-green-500 h-2 rounded-full" style="width: 85%"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 

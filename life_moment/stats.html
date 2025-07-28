@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>情绪统计 - Life Moment</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- In a real application, you would include a charting library like Chart.js -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
+</head>
+<body class="bg-gray-50">
+    <div class="p-4 max-w-md mx-auto">
+        <!-- 顶部标题 -->
+        <header class="text-center mb-6">
+            <h1 class="text-2xl font-bold text-gray-800">情绪洞察</h1>
+            <p class="text-gray-500">回顾你过去的情绪模式</p>
+        </header>
+
+        <!-- 时间范围选择 -->
+        <div class="flex justify-center bg-gray-200 rounded-full p-1 mb-6">
+            <button class="px-4 py-2 text-sm font-semibold text-gray-700 rounded-full flex-1 text-center bg-white shadow">周</button>
+            <button class="px-4 py-2 text-sm font-semibold text-gray-500 rounded-full flex-1 text-center">月</button>
+            <button class="px-4 py-2 text-sm font-semibold text-gray-500 rounded-full flex-1 text-center">年</button>
+        </div>
+
+        <!-- 主要内容区 -->
+        <main class="space-y-6">
+            <!-- 情绪波动图 -->
+            <section class="bg-white p-4 rounded-lg shadow">
+                <h2 class="font-bold text-lg mb-2 text-gray-700">情绪波动</h2>
+                <p class="text-sm text-gray-500 mb-4">过去7天</p>
+                <!-- Chart.js canvas placeholder -->
+                <div class="h-48 bg-gray-100 rounded flex items-center justify-center">
+                     <i class="fas fa-chart-line text-4xl text-gray-300"></i>
+                     <p class="text-gray-400 ml-2">情绪波动折线图</p>
+                </div>
+            </section>
+
+            <!-- 情绪分布 -->
+            <section class="bg-white p-4 rounded-lg shadow">
+                <h2 class="font-bold text-lg mb-2 text-gray-700">情绪分布</h2>
+                <div class="flex items-center space-x-4">
+                    <!-- Pie chart placeholder -->
+                    <div class="w-1/2 h-36 bg-gray-100 rounded flex items-center justify-center">
+                        <i class="fas fa-chart-pie text-4xl text-gray-300"></i>
+                    </div>
+                    <div class="w-1/2 space-y-2 text-sm">
+                        <div class="flex items-center"><div class="w-3 h-3 rounded-full bg-blue-400 mr-2"></div><span>平静 (45%)</span></div>
+                        <div class="flex items-center"><div class="w-3 h-3 rounded-full bg-green-400 mr-2"></div><span>开心 (30%)</span></div>
+                        <div class="flex items-center"><div class="w-3 h-3 rounded-full bg-yellow-400 mr-2"></div><span>一般 (15%)</span></div>
+                        <div class="flex items-center"><div class="w-3 h-3 rounded-full bg-red-400 mr-2"></div><span>难过 (10%)</span></div>
+                    </div>
+                </div>
+            </section>
+
+             <!-- 情绪洞察 -->
+            <section class="bg-white p-4 rounded-lg shadow">
+                <h2 class="font-bold text-lg mb-3 text-gray-700">为你洞察</h2>
+                <div class="space-y-3">
+                    <div class="flex items-start bg-blue-50 p-3 rounded-lg">
+                        <i class="fas fa-lightbulb text-blue-500 mt-1 mr-3"></i>
+                        <p class="text-sm text-blue-700">你本周的情绪以 **平静** 为主，这是一个积极的信号。</p>
+                    </div>
+                    <div class="flex items-start bg-green-50 p-3 rounded-lg">
+                        <i class="fas fa-seedling text-green-500 mt-1 mr-3"></i>
+                        <p class="text-sm text-green-700">你的 **开心** 时刻大多与“完成工作”和“朋友聚会”标签相关。</p>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+</body>
+</html>

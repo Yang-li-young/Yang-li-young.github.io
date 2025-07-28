@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网球训练APP - 原型展示</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .phone-frame {
+            width: 375px;
+            height: 812px;
+            background: #000;
+            border-radius: 40px;
+            padding: 8px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            margin: 0 auto;
+        }
+        .screen {
+            width: 100%;
+            height: 100%;
+            border-radius: 32px;
+            overflow: hidden;
+            background: #fff;
+        }
+        .status-bar {
+            height: 44px;
+            background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            color: white;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        .nav-tabs {
+            display: flex;
+            background: #f8f9fa;
+            border-bottom: 1px solid #e9ecef;
+        }
+        .nav-tab {
+            flex: 1;
+            padding: 12px;
+            text-align: center;
+            color: #6c757d;
+            cursor: pointer;
+            transition: all 0.3s;
+            border-bottom: 3px solid transparent;
+        }
+        .nav-tab.active {
+            color: #22c55e;
+            border-bottom-color: #22c55e;
+            background: white;
+        }
+        .content-frame {
+            height: calc(100% - 44px - 60px);
+            border: none;
+        }
+        .page-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));
+            gap: 40px;
+            padding: 40px;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+        .page-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .page-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .page-description {
+            font-size: 14px;
+            color: #6b7280;
+            text-align: center;
+            margin-bottom: 15px;
+            max-width: 300px;
+        }
+        /* 网球动作图标样式 */
+        .tennis-icon {
+            width: 24px;
+            height: 24px;
+            background: currentColor;
+            border-radius: 50%;
+            position: relative;
+            display: inline-block;
+        }
+        .tennis-icon::before {
+            content: '';
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: white;
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .serve-icon {
+            background: linear-gradient(45deg, #22c55e, #16a34a);
+        }
+        .forehand-icon {
+            background: linear-gradient(45deg, #ef4444, #dc2626);
+        }
+        .backhand-icon {
+            background: linear-gradient(45deg, #3b82f6, #2563eb);
+        }
+        .volley-icon {
+            background: linear-gradient(45deg, #f59e0b, #d97706);
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen">
+    <!-- 页面标题 -->
+    <div class="bg-white shadow-sm border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 py-6">
+            <h1 class="text-3xl font-bold text-gray-900 text-center">网球训练APP - 高保真原型</h1>
+            <p class="text-gray-600 text-center mt-2">完整的功能页面展示</p>
+        </div>
+    </div>
+
+    <!-- 网格展示区域 -->
+    <div class="page-grid">
+        <!-- 首页 -->
+        <div class="page-item">
+            <h2 class="page-title">🏠 首页</h2>
+            <p class="page-description">个性化欢迎界面、训练数据概览、今日训练计划、快速功能入口</p>
+            <div class="phone-frame">
+                <div class="screen">
+                    <!-- 状态栏 -->
+                    <div class="status-bar">
+                        <div class="flex items-center space-x-1">
+                            <i class="fas fa-signal text-xs"></i>
+                            <i class="fas fa-wifi text-xs"></i>
+                        </div>
+                        <div class="text-sm font-medium">9:41</div>
+                        <div class="flex items-center space-x-1">
+                            <i class="fas fa-battery-three-quarters text-xs"></i>
+                        </div>
+                    </div>
+                    
+                    <!-- 导航标签 -->
+                    <div class="nav-tabs">
+                        <div class="nav-tab active">
+                            <i class="fas fa-home text-lg mb-1"></i>
+                            <div class="text-xs">首页</div>
+                        </div>
+                        <div class="nav-tab">
+                            <div class="tennis-icon serve-icon mx-auto mb-1"></div>
+                            <div class="text-xs">训练</div>
+                        </div>
+                        <div class="nav-tab">
+                            <i class="fas fa-graduation-cap text-lg mb-1"></i>
+                            <div class="text-xs">学习</div>
+                        </div>
+                        <div class="nav-tab">
+                            <i class="fas fa-users text-lg mb-1"></i>
+                            <div class="text-xs">社区</div>
+                        </div>
+                        <div class="nav-tab">
+                            <i class="fas fa-user text-lg mb-1"></i>
+                            <div class="text-xs">我的</div>
+                        </div>
+                    </div>
+                    
+                    <!-- 内容区域 -->
+                    <iframe class="content-frame w-full" src="home.html"></iframe>
+                </div>
+            </div>
+        </div>
+
+        <!-- 训练页面 -->
+        <div class="page-item">
+            <h2 class="page-title">🏋️ 训练中心</h2>
+            <p class="page-description">训练状态统计、快速开始训练、训练分类管理、本周训练计划</p>
+            <div class="phone-frame">
+                <div class="screen">
+                    <!-- 状态栏 -->
+                    <div class="status-bar">
+                        <div class="flex items-center space-x-1">
+                            <i class="fas fa-signal text-xs"></i>
+                            <i class="fas fa-wifi text-xs"></i>
+                        </div>
+                        <div class="text-sm font-medium">9:41</div>
+                        <div class="flex items-center space-x-1">
+                            <i class="fas fa-battery-three-quarters text-xs"></i>
+                        </div>
+                    </div>
+                    
+                    <!-- 导航标签 -->
+                    <div class="nav-tabs">
+                        <div class="nav-tab">
+                            <i class="fas fa-home text-lg mb-1"></i>
+                            <div class="text-xs">首页</div>
+                        </div>
+                        <div class="nav-tab active">
+                            <div class="tennis-icon serve-icon mx-auto mb-1"></div>
+                            <div class="text-xs">训练</div>
+                        </div>
+                        <div class="nav-tab">
+                            <i class="fas fa-graduation-cap text-lg mb-1"></i>
+                            <div class="text-xs">学习</div>
+                        </div>
+                        <div class="nav-tab">
+                            <i class="fas fa-users text-lg mb-1"></i>
+                            <div class="text-xs">社区</div>
+                        </div>
+                        <div class="nav-tab">
+                            <i class="fas fa-user text-lg mb-1"></i>
+                            <div class="text-xs">我的</div>
+                        </div>
+                    </div>
+                    
+                    <!-- 内容区域 -->
+                    <iframe class="content-frame w-full" src="train.html"></iframe>
+                </div>
+            </div>
+        </div>
+
+        <!-- 学习页面 -->
+        <div class="page-item">
+            <h2 class="page-title">📚 学习中心</h2>
+            <p class="page-description">学习进度追踪、课程分类浏览、推荐课程展示、学习路径规划</p>
+            <div class="phone-frame">
+                <div class="screen">
+                    <!-- 状态栏 -->
+                    <div class="status-bar">
+                        <div class="flex items-center space-x-1">
+                            <i class="fas fa-signal text-xs"></i>
+                            <i class="fas fa-wifi text-xs"></i>
+                        </div>
+                        <div class="text-sm font-medium">9:41</div>
+                        <div class="flex items-center space-x-1">
+                            <i class="fas fa-battery-three-quarters text-xs"></i>
+                        </div>
+                    </div>
+                    
+                    <!-- 导航标签 -->
+                    <div class="nav-tabs">
+                        <div class="nav-tab">
+                            <i class="fas fa-home text-lg mb-1"></i>
+                            <div class="text-xs">首页</div>
+                        </div>
+                        <div class="nav-tab">
+                            <div class="tennis-icon serve-icon mx-auto mb-1"></div>
+                            <div class="text-xs">训练</div>
+                        </div>
+                        <div class="nav-tab active">
+                            <i class="fas fa-graduation-cap text-lg mb-1"></i>
+                            <div class="text-xs">学习</div>
+                        </div>
+                        <div class="nav-tab">
+                            <i class="fas fa-users text-lg mb-1"></i>
+                            <div class="text-xs">社区</div>
+                        </div>
+                        <div class="nav-tab">
+                            <i class="fas fa-user text-lg mb-1"></i>
+                            <div class="text-xs">我的</div>
+                        </div>
+                    </div>
+                    
+                    <!-- 内容区域 -->
+                    <iframe class="content-frame w-full" src="learn.html"></iframe>
+                </div>
+            </div>
+        </div>
+
+        <!-- 社区页面 -->
+        <div class="page-item">
+            <h2 class="page-title">👥 社区</h2>
+            <p class="page-description">社区动态分享、热门话题讨论、用户互动功能、附近比赛信息</p>
+            <div class="phone-frame">
+                <div class="screen">
+                    <!-- 状态栏 -->
+                    <div class="status-bar">
+                        <div class="flex items-center space-x-1">
+                            <i class="fas fa-signal text-xs"></i>
+                            <i class="fas fa-wifi text-xs"></i>
+                        </div>
+                        <div class="text-sm font-medium">9:41</div>
+                        <div class="flex items-center space-x-1">
+                            <i class="fas fa-battery-three-quarters text-xs"></i>
+                        </div>
+                    </div>
+                    
+                    <!-- 导航标签 -->
+                    <div class="nav-tabs">
+                        <div class="nav-tab">
+                            <i class="fas fa-home text-lg mb-1"></i>
+                            <div class="text-xs">首页</div>
+                        </div>
+                        <div class="nav-tab">
+                            <div class="tennis-icon serve-icon mx-auto mb-1"></div>
+                            <div class="text-xs">训练</div>
+                        </div>
+                        <div class="nav-tab">
+                            <i class="fas fa-graduation-cap text-lg mb-1"></i>
+                            <div class="text-xs">学习</div>
+                        </div>
+                        <div class="nav-tab active">
+                            <i class="fas fa-users text-lg mb-1"></i>
+                            <div class="text-xs">社区</div>
+                        </div>
+                        <div class="nav-tab">
+                            <i class="fas fa-user text-lg mb-1"></i>
+                            <div class="text-xs">我的</div>
+                        </div>
+                    </div>
+                    
+                    <!-- 内容区域 -->
+                    <iframe class="content-frame w-full" src="community.html"></iframe>
+                </div>
+            </div>
+        </div>
+
+        <!-- 个人中心页面 -->
+        <div class="page-item">
+            <h2 class="page-title">👤 个人中心</h2>
+            <p class="page-description">用户信息管理、VIP会员服务、训练数据统计、功能菜单</p>
+            <div class="phone-frame">
+                <div class="screen">
+                    <!-- 状态栏 -->
+                    <div class="status-bar">
+                        <div class="flex items-center space-x-1">
+                            <i class="fas fa-signal text-xs"></i>
+                            <i class="fas fa-wifi text-xs"></i>
+                        </div>
+                        <div class="text-sm font-medium">9:41</div>
+                        <div class="flex items-center space-x-1">
+                            <i class="fas fa-battery-three-quarters text-xs"></i>
+                        </div>
+                    </div>
+                    
+                    <!-- 导航标签 -->
+                    <div class="nav-tabs">
+                        <div class="nav-tab">
+                            <i class="fas fa-home text-lg mb-1"></i>
+                            <div class="text-xs">首页</div>
+                        </div>
+                        <div class="nav-tab">
+                            <div class="tennis-icon serve-icon mx-auto mb-1"></div>
+                            <div class="text-xs">训练</div>
+                        </div>
+                        <div class="nav-tab">
+                            <i class="fas fa-graduation-cap text-lg mb-1"></i>
+                            <div class="text-xs">学习</div>
+                        </div>
+                        <div class="nav-tab">
+                            <i class="fas fa-users text-lg mb-1"></i>
+                            <div class="text-xs">社区</div>
+                        </div>
+                        <div class="nav-tab active">
+                            <i class="fas fa-user text-lg mb-1"></i>
+                            <div class="text-xs">我的</div>
+                        </div>
+                    </div>
+                    
+                    <!-- 内容区域 -->
+                    <iframe class="content-frame w-full" src="me.html"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 页面说明 -->
+    <div class="bg-white border-t border-gray-200 mt-16">
+        <div class="max-w-7xl mx-auto px-4 py-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-4">🎯 产品特色</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li>• 完整的训练管理系统</li>
+                        <li>• 专业的学习课程体系</li>
+                        <li>• 活跃的社区互动平台</li>
+                        <li>• 个性化的数据统计</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-4">🎨 设计亮点</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li>• 网球场主题色系设计</li>
+                        <li>• 网球动作图标系统</li>
+                        <li>• 流畅的用户体验</li>
+                        <li>• 响应式布局适配</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-4">🛠️ 技术特点</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li>• HTML5 + Tailwind CSS</li>
+                        <li>• 自定义网球图标</li>
+                        <li>• 高质量图片资源</li>
+                        <li>• 模块化代码结构</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 

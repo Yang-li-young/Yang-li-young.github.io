@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>博客文章</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* You can add custom styles here if needed */
+        .prose {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <div id="article-container" class="prose bg-white shadow-lg rounded-lg my-8">
+        <!-- Markdown content will be rendered here -->
+    </div>
+
+    <div class="text-center mb-8">
+        <a href="index.html" class="text-indigo-600 hover:text-indigo-800 font-bold">&larr; 返回主页</a>
+    </div>
+
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const articleContainer = document.getElementById('article-container');
+            const params = new URLSearchParams(window.location.search);
+            const article = params.get('article');
+
+            if (article) {
+                // Dynamically set the page title
+                const articleTitle = article.replace(/-/g, ' ').replace('.md', '');
+                document.title = articleTitle.charAt(0).toUpperCase() + articleTitle.slice(1) + " - 我的博客";
+
+                fetch(`blog_articles/${article}`)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Network response was not ok');
+                        }
+                        return response.text();
+                    })
+                    .then(markdown => {
+                        articleContainer.innerHTML = marked.parse(markdown);
+                    })
+                    .catch(error => {
+                        console.error('Error fetching or parsing article:', error);
+                        articleContainer.innerHTML = `<h1 class="text-red-500">加载文章失败</h1><p>抱歉，无法加载文章内容。请检查文件名是否正确，或者稍后再试。</p>`;
+                    });
+            } else {
+                articleContainer.innerHTML = `<h1>未指定文章</h1><p>请通过正确的链接访问文章。</p>`;
+            }
+        });
+    </script>
+
+</body>
+</html>

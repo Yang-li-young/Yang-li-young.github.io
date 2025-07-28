@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Life Moment - 高保真原型</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            background-color: #e2e8f0; /* 背景用柔和的灰色 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+        .phone-shell {
+            width: 400px; /* 小米14宽度约71.5mm，按比例放大 */
+            height: 860px; /* 小米14高度约152.8mm */
+            background: #1a1a1a;
+            border-radius: 40px; /* 模拟圆润边框 */
+            padding: 12px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3), 0 0 0 10px #111;
+            display: flex;
+            flex-direction: column;
+        }
+        .phone-screen {
+            background: #fff;
+            flex-grow: 1;
+            border-radius: 28px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+        .phone-content {
+            flex-grow: 1;
+            border: none;
+        }
+        .phone-header {
+            text-align: center;
+            padding: 12px 0;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            color: #fff;
+            background: rgba(0,0,0,0.2);
+            width: 150px;
+            border-radius: 0 0 12px 12px;
+            font-size: 12px;
+        }
+        .bottom-nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 10px 0;
+            background-color: #f8f8f8;
+            border-top: 1px solid #e7e7e7;
+        }
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            cursor: pointer;
+            color: #8e8e93;
+            transition: color 0.3s;
+            font-size: 10px;
+            flex: 1;
+        }
+        .nav-item.active,
+        .nav-item:hover {
+            color: #2563eb; /* 激活和悬停颜色 */
+        }
+        .nav-item i {
+            font-size: 22px;
+        }
+        .nav-item.create-btn {
+            color: #fff;
+            background: #2563eb;
+            border-radius: 50%;
+            width: 56px;
+            height: 56px;
+            justify-content: center;
+            margin-top: -30px;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
+        }
+        .nav-item.create-btn i {
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div class="phone-shell">
+        <div class="phone-screen">
+            <div class="phone-header">Xiaomi 14</div>
+            <iframe id="app-frame" src="./home.html" class="phone-content"></iframe>
+            <div class="bottom-nav">
+                <div class="nav-item active" data-page="home.html">
+                    <i class="fas fa-stream"></i>
+                    <span>记录流</span>
+                </div>
+                <div class="nav-item" data-page="calendar.html">
+                    <i class="far fa-calendar-alt"></i>
+                    <span>日历</span>
+                </div>
+                <div class="nav-item create-btn" data-page="create.html">
+                    <i class="fas fa-plus"></i>
+                </div>
+                <div class="nav-item" data-page="stats.html">
+                    <i class="fas fa-chart-pie"></i>
+                    <span>图表</span>
+                </div>
+                <div class="nav-item" data-page="me.html">
+                    <i class="far fa-user"></i>
+                    <span>我的</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const navItems = document.querySelectorAll('.nav-item');
+        const appFrame = document.getElementById('app-frame');
+
+        navItems.forEach(item => {
+            item.addEventListener('click', function() {
+                // 移除所有 'active' 类
+                navItems.forEach(nav => nav.classList.remove('active'));
+                
+                // 给当前点击的项添加 'active' 类 (发布按钮除外)
+                if (!this.classList.contains('create-btn')) {
+                    this.classList.add('active');
+                }
+
+                const page = this.getAttribute('data-page');
+                if (page) {
+                    appFrame.src = `./${page}`;
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>首页 - 思维链</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* Custom styles to ensure content fits within the iframe without its own scrollbars */
+        body {
+            background-color: #f9fafb; /* gray-50 */
+            height: 100%;
+            overflow: hidden; /* Hide body scrollbar */
+        }
+        .content-wrapper {
+            height: 100%;
+            overflow-y: auto; /* Enable scrolling on this container */
+            padding-bottom: 80px; /* Space for FAB */
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <div class="content-wrapper">
+        <!-- Header -->
+        <header class="p-4 bg-white shadow-sm sticky top-0 z-10">
+            <div class="flex justify-between items-center">
+                <h1 class="text-xl font-bold text-indigo-600">我的思维链</h1>
+                <button class="text-gray-500 hover:text-indigo-600">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </header>
+
+        <!-- Main Content: List of Chains -->
+        <main class="p-4">
+            <div class="space-y-4">
+
+                <!-- Sample Chain Card 1 -->
+                <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <h2 class="font-bold text-lg mb-1">如何规划我的下一个项目？</h2>
+                    <p class="text-sm text-gray-600 mb-2">从构思到上线的全过程思考，包含市场调研、技术选型、MVP设计...</p>
+                    <div class="flex justify-between items-center text-xs text-gray-400">
+                        <span><i class="fas fa-calendar-alt mr-1"></i> 2天前更新</span>
+                        <span class="flex items-center"><i class="fas fa-project-diagram mr-1"></i> 15个节点</span>
+                    </div>
+                </div>
+
+                <!-- Sample Chain Card 2 -->
+                <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <h2 class="font-bold text-lg mb-1">学习Tailwind CSS的最佳路径</h2>
+                    <p class="text-sm text-gray-600 mb-2">基础、组件、响应式设计、JIT模式、最佳实践。</p>
+                    <div class="flex justify-between items-center text-xs text-gray-400">
+                        <span><i class="fas fa-calendar-alt mr-1"></i> 5天前更新</span>
+                        <span class="flex items-center"><i class="fas fa-project-diagram mr-1"></i> 8个节点</span>
+                    </div>
+                </div>
+
+                <!-- Sample Chain Card 3 -->
+                <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <h2 class="font-bold text-lg mb-1">周末家庭出游计划</h2>
+                    <p class="text-sm text-gray-600 mb-2">地点选择、交通方式、物品准备、应急预案。</p>
+                    <div class="flex justify-between items-center text-xs text-gray-400">
+                        <span><i class="fas fa-calendar-alt mr-1"></i> 1周前更新</span>
+                        <span class="flex items-center"><i class="fas fa-project-diagram mr-1"></i> 12个节点</span>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- Floating Action Button (FAB) -->
+    <button class="fixed bottom-24 right-6 bg-indigo-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:bg-indigo-700 transition-colors duration-300 z-20">
+        <i class="fas fa-plus text-2xl"></i>
+    </button>
+
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>日历回顾 - Life Moment</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .calendar-day {
+            position: relative;
+            padding-bottom: 100%; /* 保持宽高比为1:1 */
+        }
+        .day-content {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .emotion-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            position: absolute;
+            bottom: 8px;
+        }
+        .day-content.today {
+            background-color: #eff6ff;
+            color: #2563eb;
+            border-radius: 50%;
+        }
+        .selected-day-details {
+            transition: all 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body class="p-4 flex flex-col h-screen bg-gray-50">
+    <!-- 顶部导航 -->
+    <header class="flex justify-between items-center mb-4 flex-shrink-0">
+        <button class="p-2 rounded-full hover:bg-gray-200 transition">
+            <i class="fas fa-chevron-left text-gray-600"></i>
+        </button>
+        <h1 class="text-xl font-bold text-gray-800">2024年 7月</h1>
+        <button class="p-2 rounded-full hover:bg-gray-200 transition">
+            <i class="fas fa-chevron-right text-gray-600"></i>
+        </button>
+    </header>
+
+    <!-- 主内容区 -->
+    <main class="flex-grow overflow-y-auto pb-8">
+        <!-- 日历星期 -->
+        <div class="grid grid-cols-7 gap-1 text-center text-sm text-gray-500 mb-2">
+            <span>日</span><span>一</span><span>二</span><span>三</span><span>四</span><span>五</span><span>六</span>
+        </div>
+
+        <!-- 日历日期 -->
+        <div class="grid grid-cols-7 gap-1">
+            <!-- 这是示例数据，实际应用中会动态生成 -->
+            <div class="calendar-day text-gray-400"><div class="day-content">30</div></div>
+            <div class="calendar-day"><div class="day-content">1<div class="emotion-dot bg-blue-400"></div></div></div>
+            <div class="calendar-day"><div class="day-content">2</div></div>
+            <div class="calendar-day"><div class="day-content">3<div class="emotion-dot bg-yellow-400"></div></div></div>
+            <div class="calendar-day"><div class="day-content">4</div></div>
+            <div class="calendar-day"><div class="day-content">5<div class="emotion-dot bg-red-400"></div></div></div>
+            <div class="calendar-day"><div class="day-content">6</div></div>
+            <div class="calendar-day"><div class="day-content">7<div class="emotion-dot bg-green-400"></div></div></div>
+            <div class="calendar-day"><div class="day-content">8</div></div>
+            <div class="calendar-day"><div class="day-content">9</div></div>
+            <div class="calendar-day"><div class="day-content">10<div class="emotion-dot bg-blue-400"></div></div></div>
+            <div class="calendar-day"><div class="day-content">11</div></div>
+            <div class="calendar-day"><div class="day-content">12</div></div>
+            <div class="calendar-day"><div class="day-content">13<div class="emotion-dot bg-yellow-400"></div></div></div>
+            <div class="calendar-day"><div class="day-content">14</div></div>
+            <div class="calendar-day"><div class="day-content today">15</div></div>
+            <div class="calendar-day"><div class="day-content">16<div class="emotion-dot bg-blue-400"></div></div></div>
+            <div class="calendar-day"><div class="day-content">17</div></div>
+            <div class="calendar-day"><div class="day-content">18</div></div>
+            <div class="calendar-day"><div class="day-content">19</div></div>
+            <div class="calendar-day"><div class="day-content">20</div></div>
+            <div class="calendar-day"><div class="day-content">21</div></div>
+            <div class="calendar-day"><div class="day-content">22</div></div>
+            <!-- ... 更多日期 ... -->
+        </div>
+
+        <!-- 当日记录预览 -->
+        <section id="day-details" class="mt-6 bg-white p-4 rounded-lg shadow-md hidden">
+            <h3 class="font-bold text-lg mb-2 text-gray-800" id="details-date">7月 3日, 星期三</h3>
+            <div class="space-y-3">
+                <div class="flex items-start space-x-3">
+                    <div class="text-2xl">😌</div>
+                    <p class="text-gray-600">今天工作很顺利，提前完成了任务，感觉很平静。</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const calendarDays = document.querySelectorAll('.calendar-day .day-content');
+        const detailsSection = document.getElementById('day-details');
+        const detailsDate = document.getElementById('details-date');
+
+        calendarDays.forEach(day => {
+            // 检查日期下方是否有情绪点
+            if (day.querySelector('.emotion-dot')) {
+                day.addEventListener('click', () => {
+                    // 模拟显示详情
+                    const date = day.textContent;
+                    detailsDate.textContent = `7月 ${date}日`; // 简化处理
+                    detailsSection.classList.remove('hidden');
+
+                    // 滚动到详情区域
+                    detailsSection.scrollIntoView({ behavior: 'smooth', block: 'end' });
+                });
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的 - 思维链</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body {
+            background-color: #f9fafb; /* gray-50 */
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- Main Content -->
+    <main class="p-4">
+        <!-- User Profile Section -->
+        <div class="flex items-center p-4 bg-white rounded-lg shadow-md">
+            <img class="w-20 h-20 rounded-full mr-6 border-4 border-indigo-100" src="https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="User Avatar">
+            <div>
+                <h1 class="text-2xl font-bold">Alex Chen</h1>
+                <p class="text-gray-500">alex.chen@example.com</p>
+            </div>
+        </div>
+
+        <!-- Stats Section -->
+        <div class="grid grid-cols-2 gap-4 mt-4">
+            <div class="bg-white p-4 rounded-lg shadow text-center">
+                <p class="text-3xl font-bold text-indigo-600">12</p>
+                <p class="text-sm text-gray-500">思维链</p>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow text-center">
+                <p class="text-3xl font-bold text-indigo-600">128</p>
+                <p class="text-sm text-gray-500">思考节点</p>
+            </div>
+        </div>
+
+        <!-- Settings List -->
+        <div class="mt-6 bg-white rounded-lg shadow overflow-hidden">
+            <ul class="divide-y divide-gray-200">
+                <li class="p-4 flex justify-between items-center hover:bg-gray-50 cursor-pointer">
+                    <span><i class="fas fa-user-circle w-6 mr-2 text-gray-500"></i>账户与安全</span>
+                    <i class="fas fa-chevron-right text-gray-400"></i>
+                </li>
+                <li class="p-4 flex justify-between items-center hover:bg-gray-50 cursor-pointer">
+                    <span><i class="fas fa-paint-brush w-6 mr-2 text-gray-500"></i>外观与主题</span>
+                    <i class="fas fa-chevron-right text-gray-400"></i>
+                </li>
+                <li class="p-4 flex justify-between items-center hover:bg-gray-50 cursor-pointer">
+                    <span><i class="fas fa-bell w-6 mr-2 text-gray-500"></i>通知设置</span>
+                    <i class="fas fa-chevron-right text-gray-400"></i>
+                </li>
+                <li class="p-4 flex justify-between items-center hover:bg-gray-50 cursor-pointer">
+                    <span><i class="fas fa-info-circle w-6 mr-2 text-gray-500"></i>关于应用</span>
+                    <i class="fas fa-chevron-right text-gray-400"></i>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Logout Button -->
+        <div class="mt-6">
+            <button class="w-full bg-red-500 text-white font-bold py-3 rounded-lg shadow hover:bg-red-600 transition-colors duration-300">
+                退出登录
+            </button>
+        </div>
+
+    </main>
+
+</body>
+</html>

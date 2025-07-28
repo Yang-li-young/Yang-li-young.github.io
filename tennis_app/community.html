@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>社区</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-50">
+    <!-- 社区头部 -->
+    <div class="bg-gradient-to-r from-blue-500 to-blue-600 text-white p-6">
+        <div class="flex items-center justify-between mb-4">
+            <div>
+                <h1 class="text-xl font-bold">网球社区</h1>
+                <p class="text-blue-100 text-sm">分享经验，交流技巧</p>
+            </div>
+            <div class="flex space-x-3">
+                <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
+                    <i class="fas fa-search text-lg"></i>
+                </div>
+                <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
+                    <i class="fas fa-bell text-lg"></i>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 社区统计 -->
+        <div class="grid grid-cols-3 gap-4">
+            <div class="text-center">
+                <div class="text-2xl font-bold">2.8k</div>
+                <div class="text-xs text-blue-100">社区成员</div>
+            </div>
+            <div class="text-center">
+                <div class="text-2xl font-bold">156</div>
+                <div class="text-xs text-blue-100">今日动态</div>
+            </div>
+            <div class="text-center">
+                <div class="text-2xl font-bold">8</div>
+                <div class="text-xs text-blue-100">在线比赛</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 快捷操作 -->
+    <div class="p-4">
+        <div class="grid grid-cols-4 gap-4">
+            <div class="text-center">
+                <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-2">
+                    <i class="fas fa-plus text-green-500"></i>
+                </div>
+                <span class="text-xs text-gray-600">发布动态</span>
+            </div>
+            <div class="text-center">
+                <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-2">
+                    <i class="fas fa-users text-red-500"></i>
+                </div>
+                <span class="text-xs text-gray-600">寻找球友</span>
+            </div>
+            <div class="text-center">
+                <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-2">
+                    <i class="fas fa-trophy text-blue-500"></i>
+                </div>
+                <span class="text-xs text-gray-600">比赛报名</span>
+            </div>
+            <div class="text-center">
+                <div class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-2">
+                    <i class="fas fa-camera text-orange-500"></i>
+                </div>
+                <span class="text-xs text-gray-600">分享照片</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 热门话题 -->
+    <div class="px-4 mb-6">
+        <h2 class="text-lg font-semibold text-gray-800 mb-4">热门话题</h2>
+        <div class="flex space-x-3 overflow-x-auto pb-2">
+            <div class="bg-green-100 text-green-600 px-4 py-2 rounded-full text-sm whitespace-nowrap">
+                #发球技巧
+            </div>
+            <div class="bg-red-100 text-red-600 px-4 py-2 rounded-full text-sm whitespace-nowrap">
+                #比赛心得
+            </div>
+            <div class="bg-blue-100 text-blue-600 px-4 py-2 rounded-full text-sm whitespace-nowrap">
+                #装备推荐
+            </div>
+            <div class="bg-orange-100 text-orange-600 px-4 py-2 rounded-full text-sm whitespace-nowrap">
+                #训练计划
+            </div>
+        </div>
+    </div>
+
+    <!-- 动态列表 -->
+    <div class="px-4 mb-6">
+        <h2 class="text-lg font-semibold text-gray-800 mb-4">最新动态</h2>
+        
+        <div class="space-y-4">
+            <!-- 动态1 -->
+            <div class="bg-white rounded-xl p-4 shadow-sm border border-gray-100">
+                <div class="flex items-start mb-3">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=50&h=50&fit=crop&crop=face" 
+                         alt="用户头像" class="w-10 h-10 rounded-full mr-3">
+                    <div class="flex-1">
+                        <div class="flex items-center justify-between">
+                            <h3 class="font-medium text-gray-800">网球小王子</h3>
+                            <span class="text-xs text-gray-500">2小时前</span>
+                        </div>
+                        <p class="text-sm text-gray-600">今天练习发球，感觉进步很大！分享一个小技巧：发球时要注意重心转移，这样能增加发球威力。</p>
+                    </div>
+                </div>
+                <img src="https://images.unsplash.com/photo-1554068865-24cecd4e34b8?w=400&h=200&fit=crop" 
+                     alt="训练照片" class="w-full h-40 object-cover rounded-lg mb-3">
+                <div class="flex items-center justify-between text-sm text-gray-500">
+                    <div class="flex items-center space-x-4">
+                        <div class="flex items-center">
+                            <i class="fas fa-heart mr-1"></i>
+                            <span>24</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-comment mr-1"></i>
+                            <span>8</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-share mr-1"></i>
+                        <span>分享</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 动态2 -->
+            <div class="bg-white rounded-xl p-4 shadow-sm border border-gray-100">
+                <div class="flex items-start mb-3">
+                    <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=50&h=50&fit=crop&crop=face" 
+                         alt="用户头像" class="w-10 h-10 rounded-full mr-3">
+                    <div class="flex-1">
+                        <div class="flex items-center justify-between">
+                            <h3 class="font-medium text-gray-800">网球女神</h3>
+                            <span class="text-xs text-gray-500">4小时前</span>
+                        </div>
+                        <p class="text-sm text-gray-600">刚参加完本地比赛，获得了第三名！感谢教练的指导，继续努力💪</p>
+                    </div>
+                </div>
+                <div class="flex items-center justify-between text-sm text-gray-500">
+                    <div class="flex items-center space-x-4">
+                        <div class="flex items-center">
+                            <i class="fas fa-heart mr-1"></i>
+                            <span>56</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-comment mr-1"></i>
+                            <span>12</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-share mr-1"></i>
+                        <span>分享</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 动态3 -->
+            <div class="bg-white rounded-xl p-4 shadow-sm border border-gray-100">
+                <div class="flex items-start mb-3">
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=50&h=50&fit=crop&crop=face" 
+                         alt="用户头像" class="w-10 h-10 rounded-full mr-3">
+                    <div class="flex-1">
+                        <div class="flex items-center justify-between">
+                            <h3 class="font-medium text-gray-800">专业教练李</h3>
+                            <span class="text-xs text-gray-500">6小时前</span>
+                        </div>
+                        <p class="text-sm text-gray-600">【技术分享】反手击球的关键要点：1. 握拍要稳定 2. 重心要下沉 3. 击球点要准确。大家有什么问题可以留言讨论。</p>
+                    </div>
+                </div>
+                <div class="bg-gray-50 rounded-lg p-3 mb-3">
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-play-circle mr-2 text-blue-500"></i>
+                        <span>反手击球技巧详解</span>
+                    </div>
+                </div>
+                <div class="flex items-center justify-between text-sm text-gray-500">
+                    <div class="flex items-center space-x-4">
+                        <div class="flex items-center">
+                            <i class="fas fa-heart mr-1"></i>
+                            <span>89</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-comment mr-1"></i>
+                            <span>23</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-share mr-1"></i>
+                        <span>分享</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 附近比赛 -->
+    <div class="px-4 pb-6">
+        <h2 class="text-lg font-semibold text-gray-800 mb-4">附近比赛</h2>
+        <div class="bg-white rounded-xl p-4 shadow-sm border border-gray-100">
+            <div class="flex items-center justify-between mb-3">
+                <h3 class="font-medium text-gray-800">周末友谊赛</h3>
+                <span class="bg-green-100 text-green-600 px-2 py-1 rounded text-xs">报名中</span>
+            </div>
+            <p class="text-sm text-gray-600 mb-3">本周六下午2点，在中央公园网球场举办友谊赛，欢迎各位球友参加！</p>
+            <div class="flex items-center justify-between text-sm text-gray-500">
+                <div class="flex items-center">
+                    <i class="fas fa-map-marker-alt mr-1"></i>
+                    <span>中央公园网球场</span>
+                </div>
+                <div class="flex items-center">
+                    <i class="fas fa-users mr-1"></i>
+                    <span>已报名 12/20</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 

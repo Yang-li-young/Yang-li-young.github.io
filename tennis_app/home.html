@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>首页</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-50">
+    <!-- 用户欢迎区域 -->
+    <div class="bg-gradient-to-r from-green-500 to-green-600 text-white p-6">
+        <div class="flex items-center justify-between mb-4">
+            <div>
+                <h1 class="text-xl font-bold">早上好，张教练</h1>
+                <p class="text-green-100 text-sm">今天也要加油训练哦！</p>
+            </div>
+            <div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
+                <i class="fas fa-user text-xl"></i>
+            </div>
+        </div>
+        
+        <!-- 今日数据概览 -->
+        <div class="grid grid-cols-3 gap-4">
+            <div class="text-center">
+                <div class="text-2xl font-bold">7</div>
+                <div class="text-xs text-green-100">连续训练天数</div>
+            </div>
+            <div class="text-center">
+                <div class="text-2xl font-bold">85%</div>
+                <div class="text-xs text-green-100">本周完成率</div>
+            </div>
+            <div class="text-center">
+                <div class="text-2xl font-bold">12</div>
+                <div class="text-xs text-green-100">总训练小时</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 今日训练计划 -->
+    <div class="p-4">
+        <div class="flex items-center justify-between mb-4">
+            <h2 class="text-lg font-semibold text-gray-800">今日训练</h2>
+            <span class="text-sm text-green-500">查看全部</span>
+        </div>
+        
+        <div class="bg-white rounded-xl p-4 shadow-sm border border-gray-100">
+            <div class="flex items-center mb-3">
+                <div class="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center mr-3">
+                    <i class="fas fa-bullseye text-orange-500"></i>
+                </div>
+                <div class="flex-1">
+                    <h3 class="font-medium text-gray-800">发球技术训练</h3>
+                    <p class="text-sm text-gray-500">45分钟 · 中级</p>
+                </div>
+                <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+                    <i class="fas fa-play text-green-500 text-xs"></i>
+                </div>
+            </div>
+            <div class="bg-gray-100 rounded-full h-2">
+                <div class="bg-green-500 h-2 rounded-full" style="width: 60%"></div>
+            </div>
+            <p class="text-xs text-gray-500 mt-2">已完成 60%</p>
+        </div>
+    </div>
+
+    <!-- 快速功能 -->
+    <div class="px-4 mb-4">
+        <h2 class="text-lg font-semibold text-gray-800 mb-4">快速开始</h2>
+        <div class="grid grid-cols-2 gap-4">
+            <div class="bg-white rounded-xl p-4 shadow-sm border border-gray-100">
+                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-3">
+                    <i class="fas fa-video text-blue-500 text-xl"></i>
+                </div>
+                <h3 class="font-medium text-gray-800 mb-1">技术指导</h3>
+                <p class="text-sm text-gray-500">观看专业教学视频</p>
+            </div>
+            <div class="bg-white rounded-xl p-4 shadow-sm border border-gray-100">
+                <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-3">
+                    <i class="fas fa-chart-line text-green-500 text-xl"></i>
+                </div>
+                <h3 class="font-medium text-gray-800 mb-1">数据分析</h3>
+                <p class="text-sm text-gray-500">查看训练数据统计</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 推荐内容 -->
+    <div class="px-4">
+        <h2 class="text-lg font-semibold text-gray-800 mb-4">推荐内容</h2>
+        <div class="space-y-4">
+            <div class="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100">
+                <img src="https://images.unsplash.com/photo-1554068865-24cecd4e34b8?w=400&h=200&fit=crop" 
+                     alt="网球训练" class="w-full h-32 object-cover">
+                <div class="p-4">
+                    <h3 class="font-medium text-gray-800 mb-2">正手击球技巧详解</h3>
+                    <p class="text-sm text-gray-500 mb-3">掌握正确的正手击球姿势和发力技巧</p>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center text-sm text-gray-500">
+                            <i class="fas fa-clock mr-1"></i>
+                            <span>15分钟</span>
+                        </div>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <i class="fas fa-eye mr-1"></i>
+                            <span>2.3k</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100">
+                <img src="https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?w=400&h=200&fit=crop" 
+                     alt="网球比赛" class="w-full h-32 object-cover">
+                <div class="p-4">
+                    <h3 class="font-medium text-gray-800 mb-2">比赛战术分析</h3>
+                    <p class="text-sm text-gray-500 mb-3">学习职业选手的比赛策略和战术运用</p>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center text-sm text-gray-500">
+                            <i class="fas fa-clock mr-1"></i>
+                            <span>25分钟</span>
+                        </div>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <i class="fas fa-eye mr-1"></i>
+                            <span>1.8k</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 

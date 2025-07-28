@@ -1,0 +1,12 @@
+title: "我的博客"
+description: "个人技术博客"
+url: "Yang-li-young.github.io"
+baseurl: "/"
+
+# 启用GitHub Pages支持的Markdown
+plugins:
+  - jekyll-sitemap
+
+# GitHub Pages设置
+markdown: kramdown
+highlighter: rouge
