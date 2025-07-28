@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Markdown Viewer</title>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+      line-height: 1.6;
+    }
+    pre code {
+      background: #f4f4f4;
+      padding: 10px;
+      display: block;
+      overflow-x: auto;
+    }
+  </style>
+</head>
+<body>
+
+<h1>文章内容</h1>
+<div id="content">加载中...</div>
+
+<script>
+  // 从 URL 获取 ?file= 参数
+  const params = new URLSearchParams(window.location.search);
+  const file = params.get("file");
+
+  if (!file) {
+    document.getElementById("content").innerText = "未指定 Markdown 文件";
+  } else {
+    fetch(file)
+      .then(res => {
+        if (!res.ok) throw new Error("加载失败：" + res.statusText);
+        return res.text();
+      })
+      .then(text => {
+        document.getElementById("content").innerHTML = marked.parse(text);
+      })
+      .catch(err => {
+        document.getElementById("content").innerText = "加载失败：" + err.message;
+      });
+  }
+</script>
+
+</body>
+</html>
