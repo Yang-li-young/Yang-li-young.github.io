@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>所有文章 - Yangli 博客</title>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+  <div class="max-w-3xl mx-auto py-12 px-6">
+    <h1 class="text-3xl font-bold mb-6 text-indigo-700">📚 所有文章</h1>
+    <ul id="article-list" class="space-y-4">
+      <!-- JS 渲染填充 -->
+    </ul>
+    <div class="mt-10">
+      <a href="../index.html" class="text-indigo-600 hover:text-indigo-800">&larr; 返回主页</a>
+    </div>
+  </div>
+
+  <script>
+    // 手动维护文章列表（因为 GitHub Pages 不支持自动读取文件夹内容）
+    const articles = [
+      { file: 'effective-ui.md', title: '如何创建有效的用户界面' },
+      { file: 'responsive-design.md', title: '响应式设计的5个关键技巧' },
+      { file: 'design-system.md', title: '设计系统如何提高团队效率' }
+    ];
+
+    const list = document.getElementById('article-list');
+
+    articles.forEach(article => {
+      const li = document.createElement('li');
+      li.innerHTML = `
+        <a href="../viewer.html?file=blog_articles/${article.file}" class="block bg-white rounded-lg shadow hover:shadow-md p-4 transition">
+          <h2 class="text-lg font-semibold text-indigo-600">${article.title}</h2>
+          <p class="text-sm text-gray-500">${article.file}</p>
+        </a>
+      `;
+      list.appendChild(li);
+    });
+  </script>
+
+</body>
+</html>
