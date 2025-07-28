@@ -2,58 +2,49 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Markdown Viewer</title>
+  <title>加载中...</title>
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 0 20px;
-      line-height: 1.6;
-    }
-    pre code {
-      background: #f4f4f4;
-      padding: 10px;
-      display: block;
-      overflow-x: auto;
-    }
-  </style>
 </head>
 <body>
 
-<a href="index.html" style="display:inline-block; margin-bottom: 20px;">← 返回首页</a>
-<h1>文章内容</h1>
+<a href="index.html">← 返回首页</a>
+<h1 id="page-title">文章加载中...</h1>
 <div id="content">加载中...</div>
 
 <script>
-const params = new URLSearchParams(window.location.search);
-const file = params.get("file");
+  const params = new URLSearchParams(window.location.search);
+  const file = params.get("file");
 
-if (!file) {
-  document.getElementById("content").innerText = "未指定 Markdown 文件";
-} else {
-  fetch(file)
-    .then(res => {
-      if (!res.ok) throw new Error("加载失败：" + res.statusText);
-      return res.text();
-    })
-    .then(text => {
-      // 提取文章标题（第一行以 # 开头的 Markdown 标题）
-      const match = text.match(/^#\s+(.*)/m);
-      if (match) {
-        document.title = match[1].trim(); // 设置 <title>
-      }
+  if (!file) {
+    document.title = "未指定文件";
+    document.getElementById("content").innerText = "未指定 Markdown 文件";
+  } else {
+    fetch(file)
+      .then(res => {
+        if (!res.ok) throw new Error("加载失败：" + res.statusText);
+        return res.text();
+      })
+      .then(text => {
+        // 提取第一行 Markdown 一级标题
+        const match = text.match(/^#\s+(.*)/m);
+        const title = match ? match[1].trim() : "未命名文章";
 
-      // 渲染 Markdown
-      document.getElementById("content").innerHTML = marked.parse(text);
-    })
-    .catch(err => {
-      document.getElementById("content").innerText = "加载失败：" + err.message;
-    });
-}
+        // 设置浏览器 tab 的标题
+        document.title = title;
+
+        // 也把标题显示在页面中（可选）
+        document.getElementById("page-title").innerText = title;
+
+        // 渲染正文内容
+        document.getElementById("content").innerHTML = marked.parse(text);
+      })
+      .catch(err => {
+        document.title = "加载失败";
+        document.getElementById("content").innerText = "加载失败：" + err.message;
+      });
+  }
 </script>
-
 
 </body>
 </html>
+
