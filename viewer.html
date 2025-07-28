@@ -22,30 +22,38 @@
 </head>
 <body>
 
+<a href="index.html" style="display:inline-block; margin-bottom: 20px;">← 返回首页</a>
 <h1>文章内容</h1>
 <div id="content">加载中...</div>
 
 <script>
-  // 从 URL 获取 ?file= 参数
-  const params = new URLSearchParams(window.location.search);
-  const file = params.get("file");
+const params = new URLSearchParams(window.location.search);
+const file = params.get("file");
 
-  if (!file) {
-    document.getElementById("content").innerText = "未指定 Markdown 文件";
-  } else {
-    fetch(file)
-      .then(res => {
-        if (!res.ok) throw new Error("加载失败：" + res.statusText);
-        return res.text();
-      })
-      .then(text => {
-        document.getElementById("content").innerHTML = marked.parse(text);
-      })
-      .catch(err => {
-        document.getElementById("content").innerText = "加载失败：" + err.message;
-      });
-  }
+if (!file) {
+  document.getElementById("content").innerText = "未指定 Markdown 文件";
+} else {
+  fetch(file)
+    .then(res => {
+      if (!res.ok) throw new Error("加载失败：" + res.statusText);
+      return res.text();
+    })
+    .then(text => {
+      // 提取文章标题（第一行以 # 开头的 Markdown 标题）
+      const match = text.match(/^#\s+(.*)/m);
+      if (match) {
+        document.title = match[1].trim(); // 设置 <title>
+      }
+
+      // 渲染 Markdown
+      document.getElementById("content").innerHTML = marked.parse(text);
+    })
+    .catch(err => {
+      document.getElementById("content").innerText = "加载失败：" + err.message;
+    });
+}
 </script>
+
 
 </body>
 </html>
