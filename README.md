@@ -1,4 +1,5 @@
 # Hexo 博客站点（lixiaoyao/V1）
+Creating a new branch is quick.
 
 基于 [Hexo 8.1.2](https://hexo.io/) 的静态博客项目，使用 **pnpm** 管理依赖，默认启用 **Landscape** 主题。目前为初始化状态，仅包含 Hexo 自带的示例文章《Hello World》。
 
